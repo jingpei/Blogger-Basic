@@ -22,17 +22,20 @@ body {
 }
 
 img {
-  width: 400px;
+  width: 100%;
   height: auto;
-
 }
 
 .btn-default {
-  width: 100px;
+  width: 120px;
 }
 
 .form {
   font-size: .9em;
+}
+
+h1 {
+  text-align: center;
 }
 
 h3 {
@@ -40,6 +43,7 @@ h3 {
   padding: 10px 20px;
   margin: 0px;
 }
+
 .category {
   display: inline-block;
   text-align: center;
@@ -49,14 +53,70 @@ h3 {
   border-radius: 5px;
 }
 
+.blog-entry-summary {
+  margin: 10px 0px;
+}
+
 .entryAdmin {
   border-radius: 5px;
   border: 1px solid lightgrey;
   padding: 0px;
+  margin-bottom: 20px;
+}
+
+.post-container {
+  margin: 20px 0px;
+}
+
+.createEntryAdmin {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .pastEntry {
   /*border-radius: 3px;*/
   border-bottom: 1px solid lightgrey;
   padding: 10px 20px;
+}
+
+.pastEntry:hover {
+  background-color: teal;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.adminContainer, .feedContainer {
+  margin-top: 20px;
+}
+
+.comment {
+  width: 100%;
+  border-bottom: 1px solid lightgrey;
+  padding: 5px;
+}
+
+.commentName {
+  font-size: 1.2em;
+}
+
+.deleteComment {
+  width: 90px;
+  padding: 3px 5px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+}
+
+.deleteComment:hover {
+  cursor: pointer;
+  background-color: teal;
+  color: white;
+  font-weight: 600;
+}
+
+.form {
+  margin-bottom: 20px;
 }

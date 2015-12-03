@@ -1,0 +1,39 @@
+<div class="feedContainer">
+  <div class="col-sm-3"></div>
+  <div class='container col-sm-6'>
+    <div class="entry">
+      <div class="blog-entry-title">
+        <h2>{{ entry.title }}</h2>
+      </div>
+      <div class="blog-entry-posted">{{ entry.date }}</div>
+      <div class="blog-entry-categories">
+        <p class="category" ng-repeat="category in entry.categories">{{ category.id }}</p>
+      </div>
+      <div class="blog-entry-img">
+        <img src='{{ entry.img }}'></img>
+      </div>
+      <div class="blog-entry-summary">
+        {{entry.summary}}
+      </div>
+      <div class="blog-entry-comments">
+        <h4>Comments</h4>
+        <form class="form col-sm-12">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" ng-model="comment.name"/>
+          </div>
+          <div class="form-group">
+            <label for="comment">Comment</label>
+            <textarea class="form-control" rows="5" ng-model="comment.text"></textarea>
+          </div>
+          <button class="btn btn-default" ng-click="addComment(comment)">Add Comment</button>
+        </form>
+        <div class="comment" ng-repeat="comment in entry.comments">
+          <div class="commentName">{{ comment.name }}</div>
+          <div class="commentText">{{ comment.text }}</div>
+        </div>
+      </div>
+    </div>  
+  </div>
+  <div class="col-sm-3"></div>
+</div>

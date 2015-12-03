@@ -1,4 +1,4 @@
-<div class="container">
+<div class="adminContainer">
   <div class="entryAdmin col-sm-3">
     <h3>Edit Entries</h3>
     <div class="pastEntry" ng-repeat="entry in entries" ng-click="editEntry()">{{entry.title}}</div>
@@ -13,14 +13,15 @@
         </div>
         <div class="form-group">
           <label for="email">Categories</label>
-          <input type="checkbox" ng-model="entry.categories.style" ng-value="Style"> Style
-          <input type="checkbox" ng-model="entry.categories.home" ng-value="Home"> Home
-          <input type="checkbox" ng-model="entry.categories.travel" ng-value="Travel"> Travel
-          <input type="checkbox" ng-model="entry.categories.workout" ng-value="Workout"> Workout
+          <div ng-dropdown-multiselect="" options="categories" selected-model="selectedCategories" extra-settings="categorySettings"></div>
         </div>
         <div class="form-group">
           <label for="date">Date</label>
           <input type="text" id="date" class="form-control" ng-model="entry.date"/></input>
+        </div>
+        <div class="form-group">
+          <label for="file-upload">Image</label>
+          <input type="file" id="file-upload" ng-click="pickImg()" ng-model="entry.img" placeholder="imageurl"/> {{ entry.img }}
         </div>
         <div class="form-group">
           <label for="entry">Entry</label>
@@ -29,10 +30,11 @@
         <button class="btn btn-default col-sm-1" ng-click="postEntry(entry)">Post</button>
       </form>
     </div>
-    <div class="commentAdmin col-sm-12">
-      <div class="comment" ng-repeat="comment in comments">
-        {{ comment }}
-      </div>
+    <h3>Comments</h3>
+    <div class="comment commentAdmin" ng-repeat="comment in entry.comments">
+      <div class="commentName">{{ comment.name }}</div>
+      <div class="commentText">{{ comment.text }}</div>
+      <div class="deleteComment" ng-click="removeComment()">Delete</div>
     </div>
   </div>
   <div class="col-sm-1"></div>
