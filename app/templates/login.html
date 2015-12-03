@@ -1,0 +1,11 @@
+<form class="form col-sm-4">
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" class="form-control" ng-model="user.email"/>
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" id="password" class="form-control" ng-model="user.password"/>
+  </div>
+  <button class="btn btn-default col-sm-1" ng-click="login(user)">Login</button>
+</form>

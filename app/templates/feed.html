@@ -1,0 +1,24 @@
+<h1>LATEST</h1>
+<div class="col-sm-2"></div>
+<div class='container col-sm-8'>
+  <div class="entry" ng-repeat="entry in entries">
+    <div class="blog-entry-title">
+      <h2>{{ entry.title }}</h2>
+    </div>
+    <div class="blog-entry-posted">{{ entry.date }}</div>
+    <div class="blog-entry-categories">
+      <p class="category" ng-repeat="category in entry.categories">{{ category }}</p>
+    </div>
+    <div class="blog-entry-img">
+      <img src='{{ entry.img }}'></img>
+    </div>
+    <div class="blog-entry-summary">
+      {{entry.summary}}
+    </div>
+    <div class="blog-entry-comments">
+      <h4>Comments</h4>
+      <div class="comment" ng-repeat="comment in entry.comments"> {{ comment }}</div>
+    </div>
+  </div>  
+</div>
+<div class="col-sm-2"></div>
