@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- ANGULAR DEPENDENCIES -->
+    <script type="text/javascript" src="./localhost_files/jquery-2.1.1.min.js"></script><style type="text/css"></style>
+    <script src="./localhost_files/angular.min.js"></script>
+    <script src="./localhost_files/angular-route.min.js"></script>
+    <script src="./localhost_files/angular-ui-router.min.js"></script>
+    <script src="./localhost_files/app.js"></script>
+    <script src="./localhost_files/ShoppingCart.js"></script>
+    <script src="./localhost_files/User.js"></script>
+    <script src="./localhost_files/ShippingCtrl.js"></script>
+
+
+    <!-- UI DEPENDENCIES -->
+    <script src="./localhost_files/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./localhost_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./localhost_files/font-awesome.min.css">
+    <link rel="stylesheet" href="./localhost_files/hover-min.css">
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="./localhost_files/styles.css">
+
+    <!--<base href="/">--><base href=".">
+  </head>
+
+  <body ng-app="pebbleCheckout" class="ng-scope">
+    <nav class="navbar navbar-default navbar-fixed-top"><a href="http://localhost:8000/checkout">pebble</a></nav>
+    <h1>CHECKOUT</h1>
+    <!-- uiView: undefined --><div class="container-fluid ui-view ng-scope" auto-scroll="true"><!-- ngInclude: undefined --><ng-include src="&#39;./app/templates/checkoutProgress.html&#39;" class="ng-scope"><div class="row checkout-steps ng-scope">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="col-sm-4">
+      <!-- ngIf: state !== 'shipping' --><div class="checkout-step step-complete ng-scope" ng-if="state !== &#39;shipping&#39;" style="
+    background-color: #00b5f3;
+    color: white;
+"><h4 style="
+    color: white;
+">1</h4></div><!-- end ngIf: state !== 'shipping' -->
+      <!-- ngIf: state === 'shipping' -->
+      <h4>Shipping Info</h4>
+    </div>
+    <div class="col-sm-4">
+      <div class="checkout-step step-complete" ng-class="state !== &#39;shipping&#39; &amp;&amp; state !== &#39;&#39; ? &#39;step-complete&#39; : &#39;&#39;"><h4>2</h4></div>
+      <h4>Add Credit Card</h4>
+    </div>
+    <div class="col-sm-4">
+      <div class="checkout-step" ng-class="state === &#39;orderSummary&#39; ? &#39;step-complete&#39; : &#39;&#39;"><h4>3</h4></div>
+      <h4>Place Order</h4>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div></ng-include>
+<div class="col-md-2 ng-scope"></div>
+<div class="row col-sm-4 ng-scope">
+  <div class="user-summary col-sm-12">
+    <h3 class="col-sm-12">1. SHIPPING INFORMATION (<a href="http://localhost:8000/checkout"> EDIT </a>)</h3>
+    <div class="user-checkout-info col-sm-12">
+      <label class="control-label">Country:</label>
+      <div class="user-info-single ng-binding"></div>
+    </div>
+    <div class="user-checkout-info col-sm-12">
+      <label class="control-label">Name:</label>
+      <div class="user-info-single ng-binding"></div>
+    </div>
+    <div class="user-checkout-info col-sm-12">
+      <label class="control-label">Address Line 1:</label>
+      <div class="user-info-single ng-binding"></div>
+    </div>
+    <div class="user-checkout-info col-sm-12">
+      <label class="control-label">Address Line 2:</label>
+      <div class="user-info-single ng-binding"></div>
+    </div>
+    <div class="user-checkout-info col-sm-12">
+      <label class="control-label">City:</label>
+      <div class="user-info-single ng-binding"></div>
+    </div>
+    <div class="user-checkout-info col-sm-12">
+      <label class="control-label">Zip Code:</label>
+      <div class="user-info-single ng-binding"></div>
+    </div>
+    <div class="user-checkout-info col-sm-12">
+      <label class="control-label">State:</label>
+      <div class="user-info-single ng-binding"></div>
+    </div>
+    <div class="user-checkout-info col-sm-12">
+      <label class="control-label">Email Address:</label>
+      <div class="user-info-single ng-binding"></div>
+    </div>
+    <div class="user-checkout-info col-sm-12">
+      <label class="control-label">Phone Number:</label>
+      <div class="user-info-single ng-binding"></div>
+    </div>
+    <div class="user-checkout-info col-sm-12">
+      <label class="control-label"><h3>SHIPPING METHOD:</h3></label>
+      <div class="user-info-single ng-binding">USPS (3-5 BUSINESS DAYS): FREE</div>
+    </div>
+  </div>
+  <form class="cc-form form-horizontal col-sm-12 ng-pristine ng-valid ng-valid-pattern" validate="">
+    <h3>2. Add Credit Card</h3>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="cc-number">CARD</label>
+      <div class="col-sm-8"><input type="text" pattern="[0-9]{13,16}" class="form-control ng-pristine ng-untouched ng-valid ng-valid-pattern" id="cc-number" placeholder="Credit Card #" ng-model="card.cardNumber"></div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="cc-expiration">EXPIRATION</label>
+      <div class="col-sm-8"><input type="text" pattern="\d{1,2}/\d{4}" class="form-control ng-pristine ng-untouched ng-valid ng-valid-pattern" id="cc-expiration" placeholder="MM/YYYY" ng-model="card.expiration"></div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="cc-cvc">CVC CODE</label>
+      <div class="col-sm-8"><input type="text" class="form-control ng-pristine ng-untouched ng-valid" id="cc-cvc" placeholder="CVC" ng-model="card.cvc"></div>
+    </div>
+    <button class="btn btn-default hvr-bounce-to-right col-sm-1" ng-click="completeOrder()">Place Order<i class="fa fa-hand-o-up"></i></button>
+    <div class="clearfix"></div>
+  </form>
+</div>
+<div class="summary col-sm-4 ng-scope">
+  <h3>SUMMARY</h3>
+  <div class="cart-items">
+    <!-- ngRepeat: item in items --><div class="cart-single row ng-scope" ng-repeat="item in items">
+      <img class="assetImg" src="./localhost_files/white_pebble_time.png">
+      <div class="itemInfo">
+        <h4><b class="ng-binding">PEBBLE TIME WHITE</b></h4>
+        <h4><i class="ng-binding">SHIPS NEXT BUSINESS DAY</i></h4>
+        <h4 class="ng-binding">$199.99</h4>
+        <h4 class="ng-binding">Quantity: 1</h4>
+        <div class="addSubtract row">
+          <div class="btn btn-default hvr-radial-out col-sm-6" ng-click="changeQty(1)"><i class="fa fa-plus"></i></div>
+          <div class="btn btn-default hvr-radial-out col-sm-6" ng-click="changeQty(-1)"><i class="fa fa-minus"></i></div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div><!-- end ngRepeat: item in items --><div class="cart-single row ng-scope" ng-repeat="item in items">
+      <img class="assetImg" src="./localhost_files/white_pebble_time_round.png">
+      <div class="itemInfo">
+        <h4><b class="ng-binding">PEBBLE TIME ROUND ROSE GOLD WHITE</b></h4>
+        <h4><i class="ng-binding">SHIPS NEXT BUSINESS DAY</i></h4>
+        <h4 class="ng-binding">$249.99</h4>
+        <h4 class="ng-binding">Quantity: 1</h4>
+        <div class="addSubtract row">
+          <div class="btn btn-default hvr-radial-out col-sm-6" ng-click="changeQty(1)"><i class="fa fa-plus"></i></div>
+          <div class="btn btn-default hvr-radial-out col-sm-6" ng-click="changeQty(-1)"><i class="fa fa-minus"></i></div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div><!-- end ngRepeat: item in items --><div class="cart-single row ng-scope" ng-repeat="item in items">
+      <img class="assetImg" src="./localhost_files/gold_pebble_time_round.png">
+      <div class="itemInfo">
+        <h4><b class="ng-binding">PEBBLE TIME ROUND ROSE GOLD</b></h4>
+        <h4><i class="ng-binding">SHIPS NEXT BUSINESS DAY</i></h4>
+        <h4 class="ng-binding">$249.99</h4>
+        <h4 class="ng-binding">Quantity: 1</h4>
+        <div class="addSubtract row">
+          <div class="btn btn-default hvr-radial-out col-sm-6" ng-click="changeQty(1)"><i class="fa fa-plus"></i></div>
+          <div class="btn btn-default hvr-radial-out col-sm-6" ng-click="changeQty(-1)"><i class="fa fa-minus"></i></div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div><!-- end ngRepeat: item in items -->
+  </div>
+  <!-- ngInclude: undefined --><ng-include src="&#39;./app/templates/totals.html&#39;" class="ng-scope"><div class="total ng-scope">
+  <table class="table">
+    <tbody><tr>
+      <td>DISCOUNT</td>
+      <td class="ng-binding">($70.00)</td>
+    </tr>
+    <tr>
+      <td>SUB TOTAL</td>
+      <td class="ng-binding">$699.97</td>
+    </tr>
+    <tr>
+      <td>SALES TAX</td>
+      <td class="ng-binding">$64.75</td>
+    </tr>
+    <tr>
+      <td>SHIPPING</td>
+      <!-- ngIf: user.shipMethod.value == 0 --><td ng-if="user.shipMethod.value == 0" class="ng-scope">FREE</td><!-- end ngIf: user.shipMethod.value == 0 -->
+      <!-- ngIf: user.shipMethod.value != 0 -->
+    </tr>
+    <tr>
+      <td><strong>TOTAL</strong></td>
+      <td><strong class="ng-binding">$694.72</strong></td>
+  </tr></tbody></table>  
+</div></ng-include>
+</div>
+<div class="col-sm-1 ng-scope"></div></div>
+    <div class="container-fluid faq">
+      <div class="row col-sm-12">
+        <div class="faq-highlight col-sm-4">
+          <i class="fa fa-globe"></i>
+          <h4>We ship all over the world!</h4>
+        </div>
+        <div class="faq-highlight col-sm-4">
+          <i class="fa fa-thumbs-o-up"></i>
+          <h4>1 Year Warranty</h4>
+        </div>
+        <div class="faq-highlight col-sm-4">
+          <i class="fa fa-calendar"></i>
+          <h4>30 Day Return Policy</h4>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="col-sm-4">
+          <a href="http://localhost:8000/#">Link</a>
+          <a href="http://localhost:8000/#">Link</a>
+          <a href="http://localhost:8000/#">Link</a>
+          <a href="http://localhost:8000/#">Link</a>
+          <a href="http://localhost:8000/#">Link</a>
+          <a href="http://localhost:8000/#">Link</a>
+        </div>
+        <div class="col-sm-4">
+          <a href="http://localhost:8000/#">Link</a>
+          <a href="http://localhost:8000/#">Link</a>
+          <a href="http://localhost:8000/#">Link</a>
+        </div>
+        <div class="col-sm-4">
+          <a href="http://localhost:8000/#">Link</a>
+          <a href="http://localhost:8000/#">Link</a>
+        </div>
+      </div>
+    </footer>
+  
+
+</body><div></div><div></div></html>
