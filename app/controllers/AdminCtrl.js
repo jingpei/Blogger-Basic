@@ -8,7 +8,7 @@ app.controller('AdminCtrl', function($scope, Content, Authentication, FIREBASE_U
   // if(!Authentication.isLoggedIn()){
   //   $location.path('/')
   // }
-  
+
   $scope.img = "";
   var index = -1;
 
@@ -38,7 +38,8 @@ app.controller('AdminCtrl', function($scope, Content, Authentication, FIREBASE_U
     if(index === -1){
       // $scope.entries.push(entry);
       entry.comments = [];
-      fbEntries.push(entry);
+      // $scope.entries.push(entry);
+      $scope.entries.$add(entry);
     } else {
       $scope.entries[index] = entry;
       $scope.entries.$save(index);

@@ -1,9 +1,8 @@
 <div class="adminContainer">
-  <div class="entryAdmin col-sm-3">
+  <div class="entryAdmin col-sm-4">
     <h3>Edit Entries</h3>
     <div class="pastEntry" ng-repeat="entry in entries" ng-click="editEntry()">{{entry.title}}</div>
   </div>
-  <div class="col-sm-1"></div>
   <div class="createEntryAdmin col-sm-7">
     <div class="post-container">
       <form class="form col-sm-12">
@@ -37,7 +36,5 @@
       <div class="deleteComment" ng-click="removeComment()">Delete</div>
     </div>
   </div>
-  <div class="col-sm-1"></div>
-
 
 </div>
