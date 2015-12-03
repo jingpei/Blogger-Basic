@@ -5,9 +5,9 @@ app.controller('AdminCtrl', function($scope, Content, Authentication, FIREBASE_U
   $scope.entries = $firebaseArray(new Firebase('https://trove-blog.firebaseio.com/entries'));
 
   // Check login
-  // if(!Authentication.isLoggedIn()){
-  //   $location.path('/')
-  // }
+  if(!Authentication.isLoggedIn()){
+    $location.path('/')
+  }
 
   $scope.img = "";
   var index = -1;

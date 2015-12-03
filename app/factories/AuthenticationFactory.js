@@ -1,4 +1,4 @@
-app.factory('Authentication', function(FIREBASE_URL, $firebaseAuth){
+app.factory('Authentication', function(FIREBASE_URL, $location, $firebaseAuth){
   var db = new Firebase(FIREBASE_URL);
   var authObj = $firebaseAuth(db);
   var uniqueId, loggedInUser;
@@ -10,12 +10,14 @@ app.factory('Authentication', function(FIREBASE_URL, $firebaseAuth){
         password: credentials.password
       })
       .then(function(authData){
+        console.log(authData);
         console.log("Logged in as: ", authData.email);
-        loggedInUser = authData.email;
+        loggedInUser = authData.uid;
         uniqueId = authData.uid;
+        $location.path('/admin')
       })
       .catch(function(err){
-        console.error("Login failed: ", error)
+        console.error("Login failed: ", err)
       })
     },
     isLoggedIn: function(){
